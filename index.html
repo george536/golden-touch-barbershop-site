@@ -336,6 +336,7 @@
 
     .services-grid,
     .amenities-grid,
+    .products-grid,
     .gallery-grid,
     .reviews-grid {
       display: grid;
@@ -421,6 +422,127 @@
       margin-top: 8px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .products-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr);
+      gap: 26px;
+      align-items: stretch;
+      padding: 24px;
+      border: 1px solid var(--line-dark);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 18px 42px rgba(21, 21, 22, .08);
+    }
+
+    .product-visual {
+      position: relative;
+      min-height: 330px;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 74% 22%, rgba(255, 255, 255, .38), transparent 22%),
+        linear-gradient(135deg, #831019, #d51d2c 44%, #2d1115);
+    }
+
+    .product-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto 8% 8%;
+      height: 22%;
+      border-radius: 50%;
+      background: rgba(11, 11, 12, .24);
+      filter: blur(16px);
+    }
+
+    .powder-pack {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      z-index: 1;
+      width: min(210px, 64%);
+      aspect-ratio: 3 / 4.1;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 255, 255, .78);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, #161616 0 13%, #d71928 13% 72%, #101010 72% 100%);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, .36);
+      color: white;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .powder-pack span {
+      display: block;
+      color: #ffd9d9;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .powder-pack strong {
+      display: block;
+      margin: 8px 0;
+      font-size: 28px;
+      line-height: .95;
+    }
+
+    .product-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 0;
+    }
+
+    .product-tag {
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(135, 16, 25, .1);
+      color: #8f1019;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .product-copy h3 {
+      color: var(--ink);
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .product-copy p {
+      margin-top: 14px;
+      color: var(--muted-dark);
+      max-width: 560px;
+    }
+
+    .product-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .product-details li {
+      padding: 8px 10px;
+      border: 1px solid var(--line-dark);
+      border-radius: 999px;
+      color: #37332d;
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .gallery-grid {
@@ -629,6 +751,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
       .quick-facts,
       .reviews-grid,
       .contact-layout {
@@ -691,10 +817,15 @@
 
       .quick-facts,
       .services-grid,
+      .products-grid,
       .amenities-grid,
       .reviews-grid,
       .contact-list {
         grid-template-columns: 1fr;
+      }
+
+      .product-copy h3 {
+        font-size: 25px;
       }
 
       .section-head {
@@ -787,6 +918,7 @@
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
+        <a href="#shop">Items for Sale</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
@@ -956,6 +1088,40 @@
       </div>
     </section>
 
+    <section id="shop" class="section-light">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Items for Sale</div>
+            <h2>Barber-approved styling for home.</h2>
+          </div>
+          <p>Start with one in-shop product for now. More items can be added as the retail shelf grows.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">
+              <div class="powder-pack">
+                <span>Red</span>
+                <strong>Styling Dust</strong>
+                <span>Men Powder Wax</span>
+              </div>
+            </div>
+            <div class="product-copy">
+              <div class="product-tag">Available in shop</div>
+              <h3>Red Styling Dust for Men Powder Wax</h3>
+              <p>A lightweight styling powder for texture, lift, and a matte finish. Ask your barber how to use it after your cut.</p>
+              <ul class="product-details">
+                <li>Matte texture</li>
+                <li>Lightweight hold</li>
+                <li>Easy daily styling</li>
+              </ul>
+              <a class="btn btn-dark" href="tel:+19053186669">Call to Check Stock</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="gallery" class="section-muted">
       <div class="container">
         <div class="section-head">
@@ -1072,14 +1238,14 @@
   </main>
 
   <div class="mobile-sticky">
-    <a class="btn btn-outline" href="tel:+19053186669">Call</a>
+    <a class="btn btn-outline" href="#shop">Shop</a>
     <a class="btn btn-gold" href="https://booksy.com/en-ca/10737_goldentouch-barbershop_barbershop_780237_hamilton" target="_blank" rel="noopener">Book</a>
   </div>
 
   <footer>
     <div class="container footer-row">
       <p>© 2026 Goldentouch Barbershop. Hamilton, Ontario.</p>
-      <p>Haircuts · Fades · Beard trims · Hot towel shaves</p>
+      <p>Haircuts · Fades · Beard trims · Styling products</p>
     </div>
   </footer>
 
