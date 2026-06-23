@@ -8,7 +8,7 @@ Static one-page website for Goldentouch Barbershop in Hamilton.
 - `assets/gallery/` — Booksy gallery/logo images copied into the project
 - `package.json` — local static server command
 - `CODEX_NOTES.md` — source notes and verification summary
-- Items for sale section with `Red Styling Dust for Men Powder Wax`
+- Items for sale section with `Agiva Powder Wax 03 Extra Strong Hold 20 Gr`
 
 ## Run
 

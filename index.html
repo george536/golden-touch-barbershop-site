@@ -430,7 +430,7 @@
 
     .product-card {
       display: grid;
-      grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr);
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
       gap: 26px;
       align-items: stretch;
       padding: 24px;
@@ -442,58 +442,21 @@
 
     .product-visual {
       position: relative;
-      min-height: 330px;
+      min-height: 250px;
       border-radius: 8px;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 74% 22%, rgba(255, 255, 255, .38), transparent 22%),
-        linear-gradient(135deg, #831019, #d51d2c 44%, #2d1115);
-    }
-
-    .product-visual::after {
-      content: "";
-      position: absolute;
-      inset: auto 8% 8%;
-      height: 22%;
-      border-radius: 50%;
-      background: rgba(11, 11, 12, .24);
-      filter: blur(16px);
-    }
-
-    .powder-pack {
-      position: absolute;
-      left: 50%;
-      top: 52%;
-      z-index: 1;
-      width: min(210px, 64%);
-      aspect-ratio: 3 / 4.1;
-      transform: translate(-50%, -50%);
-      border: 2px solid rgba(255, 255, 255, .78);
-      border-radius: 12px;
-      background:
-        linear-gradient(180deg, #161616 0 13%, #d71928 13% 72%, #101010 72% 100%);
-      box-shadow: 0 22px 46px rgba(0, 0, 0, .36);
-      color: white;
+      background: #fff;
+      border: 1px solid rgba(11, 11, 12, .08);
       display: grid;
       place-items: center;
-      text-align: center;
-      padding: 18px;
-      font-weight: 950;
-      text-transform: uppercase;
     }
 
-    .powder-pack span {
-      display: block;
-      color: #ffd9d9;
-      font-size: 13px;
-      line-height: 1.2;
-    }
-
-    .powder-pack strong {
-      display: block;
-      margin: 8px 0;
-      font-size: 28px;
-      line-height: .95;
+    .product-photo {
+      width: min(100%, 230px);
+      height: auto;
+      max-height: 230px;
+      object-fit: contain;
+      padding: 12px;
     }
 
     .product-copy {
@@ -543,6 +506,12 @@
       color: #37332d;
       font-size: 13px;
       font-weight: 900;
+    }
+
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .gallery-grid {
@@ -749,10 +718,6 @@
 
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .product-card {
-        grid-template-columns: 1fr;
       }
 
       .quick-facts,
@@ -1099,23 +1064,22 @@
         </div>
         <div class="products-grid">
           <article class="product-card">
-            <div class="product-visual" aria-hidden="true">
-              <div class="powder-pack">
-                <span>Red</span>
-                <strong>Styling Dust</strong>
-                <span>Men Powder Wax</span>
-              </div>
+            <div class="product-visual">
+              <img class="product-photo" src="assets/products/agiva-powder-wax-03-red.jpg" alt="Agiva Powder Wax 03 Extra Strong Hold 20 Gr red styling dust" loading="lazy" />
             </div>
             <div class="product-copy">
-              <div class="product-tag">Available in shop</div>
-              <h3>Red Styling Dust for Men Powder Wax</h3>
-              <p>A lightweight styling powder for texture, lift, and a matte finish. Ask your barber how to use it after your cut.</p>
+              <div class="product-tag">Agiva 03 Red</div>
+              <h3>Agiva Powder Wax 03 Extra Strong Hold 20 Gr</h3>
+              <p>Red Agiva styling dust powder wax for extra-strong texture, lift, and a matte finish. Ask your barber how to use it after your cut.</p>
               <ul class="product-details">
-                <li>Matte texture</li>
-                <li>Lightweight hold</li>
-                <li>Easy daily styling</li>
+                <li>Extra strong hold</li>
+                <li>Matte finish</li>
+                <li>20 g size</li>
               </ul>
-              <a class="btn btn-dark" href="tel:+19053186669">Call to Check Stock</a>
+              <div class="product-actions">
+                <a class="btn btn-dark" href="tel:+19053186669">Call to Check Stock</a>
+                <a class="btn btn-outline" style="color:#8f1019;border-color:rgba(143,16,25,.35);" href="https://www.amazon.ca/Agiva-Styling-Powder-Red-Extra-Strong/dp/B07HZ4QCZX" target="_blank" rel="noopener">View Reference</a>
+              </div>
             </div>
           </article>
         </div>
